@@ -1,0 +1,3 @@
+sudo -i postgres psql
+CREATE USER jeff WITH password "abc";
+ALTER USER jeff WITH SUPERUSER;
