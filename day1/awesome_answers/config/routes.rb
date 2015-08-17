@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+
+  root 'welcome#index'
+  #This will match a GET request to "/hello" url
+  # it will invoke the index method( which is called action)
+  # with in WelcomeController which is located in app/controllers folder"
+  #get({"/hello" => welcome#index"
+  # route     |    controller | Action
+  get '/hello' => 'welcome#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
