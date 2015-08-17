@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
+  # This sets the homepage. the helpers are root_path and root_url
   root 'welcome#index'
+
   #This will match a GET request to "/hello" url
   # it will invoke the index method( which is called action)
   # with in WelcomeController which is located in app/controllers folder"
@@ -8,6 +10,17 @@ Rails.application.routes.draw do
   # route     |    controller | Action
   get '/hello' => 'welcome#index'
   get '/contact' => 'contact#index'
+  post "/contact" => "contact#create"
+
+  # This will match any url /hello/something with GET request
+  # With the :as option, the URL helper will be whatever you put
+  # in there, appended with _path or _url
+  # When linking internally, you can use either., but preferably path
+  # When providing the link externally, you must use URL
+  get "/hello/:name" => "welcome#hello", as: :greet
+
+  # 2 parameters
+  get "/hello/:name/:city" => "welcome#hello", as: :full_greeting
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -17,4 +17,9 @@ class WelcomeController < ApplicationController
   #render (:index, {layout: "application"})
 
   # every controller action must have a single render action
+  
+  # :name is a variable from the URL
+  def hello
+    @name = params[:name]
+  end
 end

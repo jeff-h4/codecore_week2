@@ -1,2 +1,36 @@
 
-<h1> Contact page <h1>
+<h1> Contact page </h1>
+
+<%= form_tag "/contact" do %>
+  <div>
+    <%= label_tag :name%>
+    <%= text_field_tag :name %>
+  </div>
+  <div>
+    <%= label_tag :email%>
+  <%= email_field_tag :email %>
+  </div>
+  <%= submit_tag "Contact Us" %>
+<% end %>
+
+<%# The following was generated: %>
+<!-- <form action="/contact" accept&#45;charset="UTF&#45;8" method="post"> -->
+  <!-- <input name="utf8" type="hidden" value="&#38;#x2713;" /> -->
+  <!-- <input type="hidden" name="authenticity_token" value="o1rgPXGSlNRE8TGygjRfK5AeLCLMBYaa1644EEYLd9Pfc0dc3OhrdIbssMI/VpXBBLTSAbx5JEtMz8YJTBD6JQ==" /> -->
+  <!-- <input type="submit" name="commit" value="Contact Us" /> -->
+<!--  </form> -->
+
+<hr>
+<h2>Playing with URLs</h2>
+<%= hello_path %>
+<hr>
+<%= hello_url%>
+<hr>
+<%= greet_path({name: "Jeff"}) %>
+<%# Shortcut %>
+<%= greet_path("Jeff") %>
+<%# /hello/Jeff %>
+<hr>
+<%= greet_url({name: "Jeff", city: "Burnaby"}) %>
+<%# http://localhost:3000/hello/Tam?city=Burnaby %>
+
