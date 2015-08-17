@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   #get({"/hello" => welcome#index"
   # route     |    controller | Action
   get '/hello' => 'welcome#index'
+  get '/contact' => 'contact#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
