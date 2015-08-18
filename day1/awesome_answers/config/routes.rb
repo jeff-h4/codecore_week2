@@ -12,6 +12,12 @@ Rails.application.routes.draw do
   get '/contact' => 'contact#index'
   post "/contact" => "contact#create"
 
+  get "/subscribe" => "subscribe#index"
+  post "/subscribe" => "subscribe#create"
+  # Alternate ways to write this
+  #get "/subscribe/index"
+  #post "/subscribe/create"
+
   # This will match any url /hello/something with GET request
   # With the :as option, the URL helper will be whatever you put
   # in there, appended with _path or _url
