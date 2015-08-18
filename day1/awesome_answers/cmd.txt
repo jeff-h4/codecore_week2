@@ -1,0 +1,35 @@
+
+# This will create a new controller
+rails g controller welcome
+# Rails should auto-generate the corresponding views/controller_name folder
+# but if not, manually create it, and the index.html.erb file
+
+# add HTML code to the index.html.erb file
+
+General Info:
+localhost:3000/rails/info/routes
+
+
+# SUBSCRIBE controller exercise
+bin/rails g controller subscribe index create
+# This creates the 'subscribe' controller with index and create actions
+Add routes to the config/routes.rb
+Add 'subscribe' link_to in the application.index.erb Nav bar
+Setup the subscribe.index.erb 
+  - Setup the form (name, email) and submit
+
+Note: Instance vars setup in the controller actions can be accessed
+in the view
+
+#Models
+bin/rails g model question title:string body:text
+#Generates the Question model
+
+# Create migration
+bin/rails g migration add_view_count_to_questions
+bin/rails g migration AddViewCountToQuestions
+# Latter adds the required statements to actually create the view count
+# Apply Migrations
+bin/rake db:migrate
+
+
