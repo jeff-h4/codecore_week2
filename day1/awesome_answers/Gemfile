@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 # gem cowsay # this would use local cowsay, or latest
-gem "cowsay", '0.1.0'
+gem "cowsay", '0.0.1'
 # gem "cowsay", '0.1.0', group: :development # This sets it up for development only
 #
 # Use ActiveModel has_secure_password
@@ -52,5 +52,9 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem "interactive_editor"
+  gem "awesome_print"
+  gem "hirb"
 end
 
