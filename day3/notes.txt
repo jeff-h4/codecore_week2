@@ -1,0 +1,188 @@
+
+wednesday, Aug 19, 2015
+Javascript review:
+==============================
+
+Javascript is the only language universal to all browsers.
+It's also the only programmable language supported.
+HTML and CSS are not really programming language.
+
+The whole stack can be written in JS
+Node.Js is an example of a framework, replaces Rails
+
+Web Page = HTML + CSS + Javascript
+HTML + CSS - formatting
+Javascript - interactions, behaviour
+
+Web Application Flow
+============================
+
+WEB Page ----------------------------- Server
+           JS sends request -------->
+           <------------------------
+No page reload required
+
+ReactJs mentioned
+
+History
+============
+1995: Brendan Eich created Js
+1997: Standardized as ECMAScript
+1999: ECMAScript 3
+2009: ECMAScript 5
+2016: ECMAScript 6
+ECMAScript - like the parent language of Js. 
+Js is an implementation of ECMAScript
+
+
+Agenda
+===============
+-Js on we pages
+- variables, conditionals, iteration, arrays, functions, objects
+JS basics
+Advanced JS
+Web pages with DOM
+Easier DOM with jQuery
+transitions and animation
+tlaking to server with AJAX
+
+Js on Web Pages
+================
+Within <head>
+<script>
+  inline Js
+</script>
+
+Also have Js in separate files with <script src="filename.js"></script>
+Ideally, Js included in external files
+
+Node.Js can be used to execute Js from console
+Numbers
+==============
+Math operations are supported
+> 1+1
+will give you 2
+In Javascript, all numbers treated as float
+
+Strings
+===============
+Use " or '. These are equivalent, unlike Ruby
+"This is a string"
+There is no string interpolation in Js
+
+Combining Strings
+3 + "5"
+"35"
+// Js automatically does casting
+"one" + "two"
+"onetwo"
+Strings have .length, but not .count or .size, returns 'undefined'
+libraries can be used to supplement
+
+Characters in strings can be accessed like an array.
+"abc"[0]
+"abc"[-1] -> undefined. // -index not supported
+Javascript variables are immutable by default
+
+parseInt("abc") = NaN
+NaN is Not a Number
+1/0
+//Gives you 'infinity'
+null //references an empty object
+
+Variables
+==========================================
+var a;
+a = 5;
+var b = hello';
+
+var: Puts variable in local scope
+no var: Puts variable in global scope.
+generally, Always use var
+Also, always use semicolons at EOL
+Js naming convention uses CamelCase (except first letter lowercase)
+In a console, pretty much all vars are global
+
+var a = 1;
+>undefined
+The above is a statement, so it doesn't return anything.
+
+Comments
+=============================================
+Just like C
+// and /**/
+
+Immutability
+============================================
+var name = "tam";
+name[1] = "X";
+name
+//name is still "tam". Can't change the string due to immutability
+
+Printing
+======================
+alert() - output to popup
+confirm: check if user wants to proceed
+prompt: asks user a question
+console.log() : print to console
+
+null and undefined
+=============================================
+
+document.write("jeff")
+//Changes current webpage to print "jeff" out in html
+//Appends to existing written text
+
+'Ctrl k' will clear console
+Booleans
+=============================================
+true false
+> < == != <= >= && || !
+Quirk: "2" == 2 is true
+It's a loose operation, avoid using
+Use === instead. Complement is !==
+
+Falsy
+==============================================
+false
+0 (zero)
+"" empty string
+null
+undefined
+NaN (Number value that means Not a Number)
+
+Can use typeof() to determine var types
+
+Conditionals
+==============================================
+It's like C. Note, () are required around conditions
+'if' is a statement, not an expression. Doesn't return a value.
+In Ruby, 'if' does return a value
+if (condition) {
+}
+if (a) {
+} else if (b) {
+} else {
+}
+
+Looping
+=============================================
+while loop: Just like C.
+Incrementers: supports += and ++ operators.
+
+For loop:
+for (initialize; condition; increment) {
+}
+It's just like C as well.
+for (var n = 0; n < 100; n++) {
+}
+
+Break Statements.
+Enclosed in an If
+exits the enclosing for/while loop
+
+Array
+=============================================
+myArray = [0, "Hello World", null, null]
+myArray.length
+
