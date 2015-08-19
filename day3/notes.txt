@@ -186,3 +186,51 @@ Array
 myArray = [0, "Hello World", null, null]
 myArray.length
 
+Arrays are MUTABLE!
+Strings are IMMUTABLE.
+myArray[0] = 200;
+myArray becomes [200, "Hello World", null, null]
+
+Split and Join.
+var sentence = "Hello World"
+sentence.split() -> gives you entire string as an element of an array
+sentence.split(" ") -> gives you array of ["Hello", "world"]
+sentence.split("") -> gives you array, with each char as an element
+
+letters = ["hi there" with each char as an element]
+letters.join() -> forms a string separated by commas
+letters.join("") -> forms full string "hi there"
+
+Functions
+============================================
+var doubleIt = function(a) {
+  console.log(a * 2);
+}
+doubleIt(5);
+
+function sum(a,b) {
+  console.log(a+b);
+};
+sum(5,6);
+can use 'return' to return a value.
+A function that does not explicitly return a value, returns 'undefined'
+
+Map 
+=================
+//Doubles every # in the array
+(1,2,3).map(function(x) { return x * 2 });
+
+Hash or Associative array
+================
+var myObject = {a: 1, b: 2, c: 3};
+myObject.a // Considered nicer syntax
+myObject["a"]
+myObject["d"] = 4; //Adds d: 4 to hash
+// or myObject.d = 4; This works too
+Elements that don't exist: returns undefined
+NOTE: if property has a space in it, can't use dot notation.
+e.g. myObject["cool guy"] = "jeff"
+
+If you have nested objects,
+myObject.a.a_inside
+
