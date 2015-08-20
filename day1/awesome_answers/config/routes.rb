@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   get '/contact' => 'contact#index'
   post "/contact" => "contact#create"
 
+  get "/questions/new" => "questions#new", as: :new_question # changes path name questions_new_path -> new_question_path
+  post "/questions" => "questions#create"#, as: :questions
+
   get "/subscribe" => "subscribe#index"
   post "/subscribe" => "subscribe#create"
   # Alternate ways to write this
