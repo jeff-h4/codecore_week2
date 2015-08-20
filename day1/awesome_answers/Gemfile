@@ -31,9 +31,10 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 # gem cowsay # this would use local cowsay, or latest
-gem "cowsay", '0.0.1'
+gem "cowsay", '0.2.0'
 # gem "cowsay", '0.1.0', group: :development # This sets it up for development only
 #
+gem 'faker'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
