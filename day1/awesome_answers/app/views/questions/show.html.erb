@@ -3,3 +3,7 @@
 
 <h2><%= @question.title %></h2>
 <p><%= @question.body %></p>
+<%# This link to the edit page of the question that shows a form to edit %>
+<%# the values already saved %>
+<%= link_to "Edit", edit_question_path(@question) %>
+

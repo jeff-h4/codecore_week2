@@ -44,4 +44,28 @@ class QuestionsController < ApplicationController
   def index
     @question = Question.all
   end
+
+  # GET /questions/:id/edit
+  # this is used to show a page that can edit the entry
+  def edit
+    @question = Question.find params[:id]
+  end
+
+  # PATCH /questions/:id (e.g. /questions/123)
+  # this is used to handle the submission of the question form from the edit page
+  # when user is updating the information on a question
+  def update
+    # uses STRONG paramters feature in Rails to only allow
+    # the title and body to be updated in the database
+    question_params = params.require(:question).permit(:title,:body)
+    @question = Question.find params[:id]
+    # If updating question is successful
+    if @question.update question_params
+      # Redirect to the question show page
+      redirect_to question_path(@question)
+    else
+      # rendering the Edit form so the user can see the errors
+      render :edit
+    end
+  end
 end

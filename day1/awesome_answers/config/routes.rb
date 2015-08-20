@@ -22,6 +22,10 @@ Rails.application.routes.draw do
   get "questions/:id" => "questions#show", as: :question
   get "/questions" => "questions#index"
 
+  # Rails convention to edit question
+  get "/questions/:id/edit" => "questions#edit", as: :edit_question
+  patch "/questions/:id" => "questions#update"
+
   get "/subscribe" => "subscribe#index"
   post "/subscribe" => "subscribe#create"
   # Alternate ways to write this
