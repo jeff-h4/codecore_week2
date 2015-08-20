@@ -25,10 +25,23 @@ class QuestionsController < ApplicationController
     #render text: params[:question][:title]
     @question = Question.new(question_params)
     if @question.save
-      render text: "success"
+      #render text: "success"
+      redirect_to question_path(@question)
     else
       render :new
     end
 
+  end
+
+  # GET /questions/:id (e.g. /questions/1)
+  # This is used to show a page with question information
+  def show
+    @question = Question.find params[:id]
+  end
+
+  # GET /questions
+  # this is used to show a page with listing of all the questions in our DB
+  def index
+    @question = Question.all
   end
 end
