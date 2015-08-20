@@ -18,7 +18,9 @@
     <%= link_to "Subscribe", subscribe_path, style: "color:turquoise" %>
     <%= link_to "Contact Us", contact_path, style: "color:turquoise" %>
     <!-- equivalent to: <a href=contact_path style="color:turquoise">Contact Us</a> -->
-    <%= link_to "Google", "http://www.google.com", {target: "_blank"}%>
+    <%# <%= link_to "Google", "http://www.google.com", {target: "_blank"}%>
+    <%= link_to "New Question", "new_quesion_path", {target: "_blank"}%>
+
   </nav>
 
 <%= yield %>
