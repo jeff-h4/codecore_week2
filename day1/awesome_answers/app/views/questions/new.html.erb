@@ -8,11 +8,29 @@
 <%# the form 'questions_path'. it will look for the class name of the passed %>
 <%# object (in this case its Question) and by convention submit to questions_path %>
 
+<% if @question.errors.any?  %>
+  <ul>
+    <% @question.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for @question do |f| %>
   <%# If you don't mass any option for f.submit it will: %>
   <%# 1. If @question is not persisted it will make the button label "Create [Object Class]" %>
   <%# 2. If @question is persisted it will make the button label "Update [Object Class]" %>
-  <% f.submit %>
+  <div>
+    <%= f.label :title %>
+    <%# using f.text_field ensure that rails will use the proper `name` HTML%>
+    <%# attribute and it will also populate the text field with data if @question%>
+    <%# title has a value %>
+    <%= f.text_field :title %> 
+  </div>
+  <div>
+    <%= f.label :body %>
+    <%= f.text_area :body %> 
+  </div>
+  <%= f.submit %>
 <% end %>
 
-<% %>

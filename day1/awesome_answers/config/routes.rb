@@ -12,6 +12,11 @@ Rails.application.routes.draw do
   get '/contact' => 'contact#index'
   post "/contact" => "contact#create"
 
+  # This will match any GET request to a url "/questions/new" to the Questions
+  # controller and new action within that controller
+  # Adding the as: :new_question option enables us to have a handy URL helper
+  # method that we can use in the views and controllers. The method in this
+  # case will be new_question_path or new_question_url
   get "/questions/new" => "questions#new", as: :new_question # changes path name questions_new_path -> new_question_path
   post "/questions" => "questions#create"#, as: :questions
 
