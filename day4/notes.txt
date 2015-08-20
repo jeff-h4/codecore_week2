@@ -1,0 +1,33 @@
+
+
+CRUD
+============================================
+
+bin/rails g crontorller questions
+# Rails Convention is to pluralize the controller when it accesses
+# a resource (i.e a model)
+
+We add the new method to display a form to add new questions
+
+Add a route
+Create new.html.erb: Name it 'create a question'
+
+Add nav link in applications.html.erb
+Syntax in route " as: :new_question" means the corresponding path is new_question_path
+
+Create Post path for creating questions
+
+
+Control flow
+1. On homepage, Client requests New question
+2. Router routes question/new to Questions Controller, new() method
+3. new() method creates instance var @question to store object
+4. No render is specified in new() method, so by default, rails looks for views/questions/new.html.erb
+5. Form from new.html.erb is generated, user fills in info and submits
+ NOTE: Form for @question -> rails will look for questions_path
+6. Submit action sends GET action to go to new.html.erb HTML page
+questions_path (/question/) and execute Questions create() method
+
+...
+Submit button -> go to questions_path (/questions). Route maps to Questions controller, create method
+

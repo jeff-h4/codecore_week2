@@ -1,0 +1,36 @@
+
+
+<h1>Create a Product</h1>
+<%# The form_for helper method can take an ActiveRecord object as a first arument %>
+<%# for instance, @product, which is of class Product. %>
+<%# Rails, by convention, will do the following: %>
+<%# 1. If @product is not persisted in the database, it will make the action for %>
+<%# the form 'questions_path'. it will look for the class name of the passed %>
+<%# object (in this case its Product) and by convention submit to questions_path %>
+
+<% if @product.errors.any?  %>
+  <ul>
+    <% @product.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @product do |f| %>
+  <%# If you don't mass any option for f.submit it will: %>
+  <%# 1. If @product is not persisted it will make the button label "Create [Object Class]" %>
+  <%# 2. If @product is persisted it will make the button label "Update [Object Class]" %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %> 
+  </div>
+    <%= f.label :price %>
+    <%= f.text_area :price %> 
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %> 
+  </div>
+  <%= f.submit %>
+<% end %>
+
