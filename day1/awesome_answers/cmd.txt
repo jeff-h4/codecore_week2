@@ -32,4 +32,5 @@ bin/rails g migration AddViewCountToQuestions
 # Apply Migrations
 bin/rake db:migrate
 
-
+# It's possible for users to add invalid records
+# need validation to prevent this. Do this in the models/ directory

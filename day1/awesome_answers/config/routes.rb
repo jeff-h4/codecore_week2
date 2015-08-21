@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   # This sets the homepage. the helpers are root_path and root_url
   root 'welcome#index'
-
+  # jeff-h4: This could do EVERYTHING for questions
+  #   resources :questions
+  
   #This will match a GET request to "/hello" url
   # it will invoke the index method( which is called action)
   # with in WelcomeController which is located in app/controllers folder"
@@ -25,8 +27,10 @@ Rails.application.routes.draw do
   # Rails convention to edit question
   get "/questions/:id/edit" => "questions#edit", as: :edit_question
   patch "/questions/:id" => "questions#update"
+  delete "/questions/:id" => "questions#destroy"
 
   get "/subscribe" => "subscribe#index"
+
   post "/subscribe" => "subscribe#create"
   # Alternate ways to write this
   #get "/subscribe/index"

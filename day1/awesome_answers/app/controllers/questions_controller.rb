@@ -68,4 +68,12 @@ class QuestionsController < ApplicationController
       render :edit
     end
   end
+  
+  # DELETE /questions/:id/
+  # this is used to delete an entry
+  def destroy
+    @question = Question.find params[:id]
+    @question.destroy
+    redirect_to questions_path 
+  end
 end
